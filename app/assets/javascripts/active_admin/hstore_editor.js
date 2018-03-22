@@ -2,7 +2,6 @@
 //= require jsoneditor/asset/jsonlint/jsonlint.js
 
 ;(function(window, $) {
-  $(document).ready(function() {
     var createEditor = function() {
       $('div.jsoneditor-wrap').each(function(i,wrap){
         var container = $(wrap)[0];
@@ -17,6 +16,7 @@
         editor = new JSONEditor(container, options,JSON.parse(textarea.val()));
       });
     }
+  $(document).ready(function() {
     createEditor();
     $(document).on('page:load turbolinks:load', createEditor);
   });
